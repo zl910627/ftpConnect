@@ -25,7 +25,7 @@ class FTPSocket {
         sResponse = String.fromCharCodes(_socket.read()).trim();
         return false;
       }
-      // await Future.delayed(Duration(milliseconds: 200));
+      await Future.delayed(Duration(milliseconds: 100));
       return true;
     }).timeout(Duration(seconds: _timeout), onTimeout: () {
       throw FTPException('Timeout reached for Receiving response !');
